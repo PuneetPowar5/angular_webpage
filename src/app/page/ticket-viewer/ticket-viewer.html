@@ -1,0 +1,49 @@
+<div class="p-6 max-w-4xl mx-auto">
+  <h2 class="text-2xl font-bold mb-4">Ticket Viewer</h2>
+
+  <!-- Filters -->
+  <div class="flex gap-3 mb-4">
+    <button
+      *ngFor="let f of ['All', 'Open', 'In Progress', 'Closed']"
+      (click)="filter = f"
+      class="px-4 py-2 rounded border"
+      [ngClass]="filter === f ? 'bg-blue-600 text-white' : 'bg-white'"
+    >
+      {{ f }}
+    </button>
+  </div>
+
+  <!-- Table -->
+  <div class="overflow-x-auto shadow rounded-lg">
+    <table class="w-full table-auto text-left">
+      <thead class="bg-gray-100 border-b">
+        <tr>
+          <th class="p-3">ID</th>
+          <th class="p-3">Subject</th>
+          <th class="p-3">Status</th>
+          <th class="p-3">Created At</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let t of filteredTickets" class="border-b hover:bg-gray-50">
+          <td class="p-3">{{ t.id }}</td>
+          <td class="p-3">{{ t.subject }}</td>
+          <td class="p-3">
+            <span
+              class="px-2 py-1 rounded text-sm font-medium"
+              [ngClass]="{
+                'bg-green-200 text-green-800': t.status === 'Open',
+                'bg-yellow-200 text-yellow-800': t.status === 'In Progress',
+                'bg-gray-300 text-gray-800': t.status === 'Closed'
+              }"
+            >
+              {{ t.status }}
+            </span>
+          </td>
+          <td class="p-3">{{ t.createdAt }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
