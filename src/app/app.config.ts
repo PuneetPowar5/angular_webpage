@@ -6,12 +6,12 @@ import {
 import { provideRouter } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
 
-import { routes } from './app.routes';
+import { AppRoutingModule, routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
-    importProvidersFrom(MarkdownModule.forRoot()),
+    importProvidersFrom(AppRoutingModule, MarkdownModule.forRoot()),
   ],
 };
