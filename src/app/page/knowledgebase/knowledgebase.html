@@ -1,7 +1,6 @@
 <div class="p-6 max-w-4xl mx-auto space-y-4">
   <h1 class="text-2xl font-bold mb-4">Knowledgebase Editor</h1>
 
-  <!-- Toggle Buttons -->
   <div class="flex gap-3">
     <button
       (click)="preview = false"
@@ -24,7 +23,6 @@
     </button>
   </div>
 
-  <!-- Editor Mode -->
   <textarea
     *ngIf="!preview"
     [(ngModel)]="content"
@@ -34,7 +32,6 @@
     placeholder="Enter Text Here..."
   ></textarea>
 
-  <!-- Preview Mode -->
   <markdown *ngIf="preview" class="prose border rounded p-4 bg-white" [data]="content"> </markdown>
 
   <button

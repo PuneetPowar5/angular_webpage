@@ -34,7 +34,6 @@ export class LiveLogs implements OnInit, AfterViewChecked, OnDestroy {
   constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
-    // Add log every 2 seconds
     this.intervalId = setInterval(() => this.addRandomLog(), 2000);
   }
 

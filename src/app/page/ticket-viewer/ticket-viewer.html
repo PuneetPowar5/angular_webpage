@@ -1,7 +1,6 @@
 <div class="p-6 max-w-4xl mx-auto">
   <h2 class="text-2xl font-bold mb-4">Ticket Viewer</h2>
 
-  <!-- Filters -->
   <div class="flex gap-3 mb-4">
     <button
       *ngFor="let f of ['All', 'Open', 'In Progress', 'Closed']"
@@ -13,7 +12,6 @@
     </button>
   </div>
 
-  <!-- Table -->
   <div class="overflow-x-auto shadow rounded-lg">
     <table class="w-full table-auto text-left">
       <thead class="bg-gray-100 border-b">
