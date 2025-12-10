@@ -1,59 +1,68 @@
-# Webpage
+# Angular Local Development Setup
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.2.
+This guide explains how to set up and run the Angular application locally so it can be accessed from your machine, emulators, or other devices on the same network.
 
-## Development server
+---
 
-To start a local development server, run:
+## 1. Prerequisites
 
-```bash
-ng serve
-```
+- **Node.js v22** (or higher)
+- **Angular CLI** (latest version)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 2. Install Node.js
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Download and install Node.js v22 from:
 
-```bash
-ng generate component component-name
-```
+[https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Verify installation:
 
 ```bash
-ng generate --help
+node -v
+
+This should output:
+
+v22.x.x
 ```
 
-## Building
+---
 
-To build the project run:
+## 3. Install Angular CLI
 
-```bash
-ng build
-```
+Run the following command in terminal:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+npm install -g @angular/cli
 
-## Running unit tests
+Run this command to verify that the cli is downloaded:
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+ng version
 
-```bash
-ng test
-```
+NOTE:
 
-## Running end-to-end tests
+If ng is not recognized by your machine do the following:
 
-For end-to-end (e2e) testing, run:
+echo 'export PATH="$PATH:$(npm config get prefix)/bin"' >> ~/.bashrc
+source ~/.bashrc
 
-```bash
-ng e2e
-```
+OR
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+echo 'export PATH="$PATH:$(npm config get prefix)/bin"' >> ~/.zshrc
+source ~/.zshrc
 
-## Additional Resources
+Depending on if you are using zsh or bash
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Now you will be able to run the following:
+
+ng version
+
+---
+
+## 4. Run Angular Application Locally
+
+Run the following command:
+
+ng serve --host 0.0.0.0 --port 4200
+
+These steps will allow you to run this internal dashboard locally on your machine
