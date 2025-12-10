@@ -8,6 +8,7 @@ This guide explains how to set up and run the Angular application locally so it 
 
 - **Node.js v22** (or higher)
 - **Angular CLI** (latest version)
+- **Run `npm i` or `npm install` to get all dependencies**
 
 ---
 
