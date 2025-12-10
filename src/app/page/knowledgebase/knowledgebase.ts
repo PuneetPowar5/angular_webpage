@@ -19,7 +19,7 @@ export class Knowledgebase {
 
   save() {
     localStorage.setItem('kb_article', this.content);
-    alert('Article saved locally!');
+    alert('Article Saved!');
   }
 
   autoSave() {

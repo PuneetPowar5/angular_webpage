@@ -49,6 +49,7 @@ export class LiveLogs implements OnInit, AfterViewChecked, OnDestroy {
     const timestamp = new Date().toLocaleTimeString();
     this.logs.push(`[${timestamp}] ${this.randomMessages[randomIndex]}`);
     this.cdr.detectChanges();
+    this.scrollToBottom();
   }
 
   scrollToBottom() {
@@ -58,14 +59,6 @@ export class LiveLogs implements OnInit, AfterViewChecked, OnDestroy {
     } catch (err) {
       console.error('Scroll error', err);
     }
-  }
-
-  // Detect if user scrolls manually
-  onScroll() {
-    const container = this.logContainer.nativeElement;
-    const threshold = 10; // pixels from bottom
-    this.userScrolled =
-      container.scrollHeight - container.scrollTop - container.clientHeight > threshold;
   }
 
   ngOnDestroy() {
